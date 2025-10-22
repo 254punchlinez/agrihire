@@ -27,7 +27,7 @@ const Navbar: React.FC = () => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8 text-gray-700">
-          <Link href="/how-it-works" className="hover:text-green-600">
+          <Link href="/HowItWorks" className="hover:text-green-600">
             How It Works
           </Link>
           <Link href="/browse-equipment" className="hover:text-green-600">
@@ -64,7 +64,7 @@ const Navbar: React.FC = () => {
       {/* Mobile Dropdown Menu */}
       {isOpen && (
         <div className="md:hidden px-6 pb-4 flex flex-col space-y-3 text-gray-700">
-          <Link href="/how-it-works" className="hover:text-green-600">
+          <Link href="/HowItWorks" className="hover:text-green-600">
             How It Works
           </Link>
           <Link href="/browse-equipment" className="hover:text-green-600">
