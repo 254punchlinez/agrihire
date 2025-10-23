@@ -52,9 +52,29 @@ const equipmentData: Equipment[] = [
     name: "Combine Harvester",
     location: "Nakuru",
     rating: 4.8,
-    reviews: 31,
+    reviews: 65,
     price: 10000,
     image: '/images/combine harvester.jpg',
+    featured: true,
+  },
+  {
+    id: 5,
+    name: "Milking Machine",
+    location: "Kiambu",
+    rating: 4.8,
+    reviews: 27,
+    price: 1500,
+    image: '/images/milking machine.jpg',
+    featured: true,
+  },
+  {
+    id: 6,
+    name: "Garden Trolley",
+    location: "Limuru",
+    rating: 4.8,
+    reviews: 50,
+    price: 500,
+    image: '/images/garden trolley.jpg',
     featured: true,
   },
 ];
@@ -134,7 +154,7 @@ export default function FeaturedEquipment() {
         </div>
 
         {/* Equipment Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {equipmentData.map((equipment) => (
             <EquipmentCard key={equipment.id} equipment={equipment} />
           ))}
