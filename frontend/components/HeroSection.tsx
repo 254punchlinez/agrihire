@@ -1,21 +1,30 @@
+"use client";
 import { Tractor } from "lucide-react";
 
 const HeroSection: React.FC = () => {
+  // Function for smooth scrolling
+  const handleScrollToEquipment = () => {
+    const section = document.getElementById("featured-equipment");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section
       id="hero"
       className="relative w-full py-20 flex justify-start items-center bg-white"
       style={{
         backgroundImage: 'url("/images/homebg.jpg")',
+        backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
     >
-      {/*Overlay gradient*/}
+      {/* Overlay gradient */}
       <div className="absolute inset-0 bg-gradient-to-r from-white/90 to-white/30 to-transparent" />
-      {/*Content*/}
+
+      {/* Content */}
       <div className="relative max-w-5xl w-full px-8 sm:px-12 lg:px-20 text-left">
-
-
-
         {/* Tagline */}
         <div className="mt-3 flex flex-wrap justify-start items-center gap-3 mb-6 text-green-700 bg-amber-200 rounded-2xl px-3 py-2 max-w-fit">
           <Tractor size={28} className="pl-1" />
@@ -42,9 +51,13 @@ const HeroSection: React.FC = () => {
 
         {/* Buttons */}
         <div className="mt-8 flex flex-col sm:flex-row justify-start gap-4">
-          <button className="bg-green-500 hover:bg-green-600 transition-colors font-semibold text-white px-5 py-3 rounded-2xl shadow-md">
+          <button
+            onClick={handleScrollToEquipment}
+            className="bg-green-500 hover:bg-green-600 transition-colors font-semibold text-white px-5 py-3 rounded-2xl shadow-md"
+          >
             Find Equipment
           </button>
+
           <button className="bg-yellow-500 hover:bg-yellow-600 transition-colors font-semibold text-white px-5 py-3 rounded-2xl shadow-md">
             List Your Tools
           </button>

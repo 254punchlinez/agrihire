@@ -2,24 +2,34 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X } from "lucide-react"; 
+import { Menu, X } from "lucide-react";
 import Image from "next/image";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
+  // Smooth scroll handler
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    const section = document.getElementById(targetId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+      setIsOpen(false); // close mobile menu if open
+    }
+  };
+
   return (
-    <nav className="w-full bg-white shadow-sm">
+    <nav className="w-full bg-white shadow-sm fixed top-0 left-0 z-50">
       <div className="flex justify-between items-center px-6 py-3">
         {/* Left Section: Logo */}
         <div className="flex items-center space-x-2">
-           <Image
-              src="/images/logo5.jpeg"  
-              alt=" Logo"
-              width={40}       
-              height={40}       
-              className="rounded-full" 
-            />
+          <Image
+            src="/images/logo5.jpeg"
+            alt="Logo"
+            width={40}
+            height={40}
+            className="rounded-full"
+          />
           <Link href="/" className="text-xl font-semibold text-gray-800">
             AgriHire
           </Link>
@@ -27,15 +37,29 @@ const Navbar: React.FC = () => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8 text-gray-700">
-          <Link href="/HowItWorks" className="hover:text-green-600">
+          <a
+            href="#HowItWorks"
+            onClick={(e) => handleSmoothScroll(e, "HowItWorks")}
+            className="hover:text-green-600 cursor-pointer"
+          >
             How It Works
-          </Link>
-          <Link href="/browse-equipment" className="hover:text-green-600">
+          </a>
+
+          <a
+            href="#featured-equipment"
+            onClick={(e) => handleSmoothScroll(e, "featured-equipment")}
+            className="hover:text-green-600 cursor-pointer"
+          >
             Browse Equipment
-          </Link>
-          <Link href="/list-your-tools" className="hover:text-green-600">
+          </a>
+
+          <a
+            href="#list-your-tools"
+            onClick={(e) => handleSmoothScroll(e, "list-your-tools")}
+            className="hover:text-green-600 cursor-pointer"
+          >
             List Your Tools
-          </Link>
+          </a>
         </div>
 
         {/* Right Section (Desktop) */}
@@ -64,18 +88,34 @@ const Navbar: React.FC = () => {
       {/* Mobile Dropdown Menu */}
       {isOpen && (
         <div className="md:hidden px-6 pb-4 flex flex-col space-y-3 text-gray-700">
-          <Link href="/HowItWorks" className="hover:text-green-600">
+          <a
+            href="#HowItWorks"
+            onClick={(e) => handleSmoothScroll(e, "HowItWorks")}
+            className="hover:text-green-600"
+          >
             How It Works
-          </Link>
-          <Link href="/browse-equipment" className="hover:text-green-600">
+          </a>
+
+          <a
+            href="#featured-equipment"
+            onClick={(e) => handleSmoothScroll(e, "featured-equipment")}
+            className="hover:text-green-600"
+          >
             Browse Equipment
-          </Link>
-          <Link href="/list-your-tools" className="hover:text-green-600">
+          </a>
+
+          <a
+            href="#list-your-tools"
+            onClick={(e) => handleSmoothScroll(e, "list-your-tools")}
+            className="hover:text-green-600"
+          >
             List Your Tools
-          </Link>
+          </a>
+
           <Link href="/signin" className="hover:text-green-600">
             Sign In
           </Link>
+
           <Link
             href="/get-started"
             className="bg-green-600 text-white px-4 py-2 rounded-lg text-center hover:bg-green-700"
