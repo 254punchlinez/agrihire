@@ -34,6 +34,7 @@ const steps = [
 
 const HowItWorks: React.FC = () => {
   return (
+    <section id="HowItWorks" className="py-24 bg-background">
     <section className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
@@ -77,6 +78,7 @@ const HowItWorks: React.FC = () => {
         </div>
       </div>
     </section>
+  </section>
   );
 };
 
