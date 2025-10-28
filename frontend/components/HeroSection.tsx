@@ -20,10 +20,9 @@ const HeroSection: React.FC = () => {
         backgroundPosition: "center",
       }}
     >
-      {/* Overlay gradient */}
+      {/*Overlay gradient*/}
       <div className="absolute inset-0 bg-gradient-to-r from-white/90 to-white/30 to-transparent" />
-
-      {/* Content */}
+      {/*Content*/}
       <div className="relative max-w-5xl w-full px-8 sm:px-12 lg:px-20 text-left">
         {/* Tagline */}
         <div className="mt-3 flex flex-wrap justify-start items-center gap-3 mb-6 text-green-700 bg-amber-200 rounded-2xl px-3 py-2 max-w-fit">
@@ -51,15 +50,12 @@ const HeroSection: React.FC = () => {
 
         {/* Buttons */}
         <div className="mt-8 flex flex-col sm:flex-row justify-start gap-4">
-          <button
-            onClick={handleScrollToEquipment}
-            className="bg-green-500 hover:bg-green-600 transition-colors font-semibold text-white px-5 py-3 rounded-2xl shadow-md"
-          >
+          <button className="bg-green-500 hover:bg-green-600 transition-colors font-semibold text-white px-5 py-3 rounded-2xl shadow-md">
             Find Equipment
           </button>
 
           <button className="bg-yellow-500 hover:bg-yellow-600 transition-colors font-semibold text-white px-5 py-3 rounded-2xl shadow-md">
-            List Your Tools
+            List your tools
           </button>
         </div>
 
