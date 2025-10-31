@@ -64,11 +64,11 @@ const Navbar: React.FC = () => {
 
         {/* Right Section (Desktop) */}
         <div className="hidden md:flex items-center space-x-4">
-          <Link href="/signin" className="text-gray-800 font-medium hover:text-green-600">
+          <Link href="/login" className="text-gray-800 font-medium hover:text-green-600">
             Sign In
           </Link>
           <Link
-            href="/get-started"
+            href="/signup"
             className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700"
           >
             Get Started
@@ -112,12 +112,12 @@ const Navbar: React.FC = () => {
             List Your Tools
           </a>
 
-          <Link href="/signin" className="hover:text-green-600">
+          <Link href="/login" className="hover:text-green-600">
             Sign In
           </Link>
 
           <Link
-            href="/get-started"
+            href="/signup"
             className="bg-green-600 text-white px-4 py-2 rounded-lg text-center hover:bg-green-700"
           >
             Get Started
